@@ -1,0 +1,24 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Output PDFs (if you recompile locally)
+# Uncomment the next line if you want to exclude PDFs too:
+# *.pdf
+
+# VSCode-specific files
+.vscode/
