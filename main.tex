@@ -20,7 +20,7 @@
 \usepackage{multicol}
 
 % Este paquete es para que el documento ocupe toda la pantalla
-\usepackage{fullpage}
+\usepackage[margin=2.5cm]{geometry}
 
 % Este paquete añade ambientes para alinear ecuaciones y otros detalles matematicos
 \usepackage{amsmath}
@@ -133,13 +133,11 @@
 % Aqui hago varios ajustes para añadir lineas horizontales antes y despues del abstract
 \hspace{-2cm}
 
-\noindent\rule{17cm}{0.4pt}\\ % Aqui ya pones tu abstract/resumen
+\noindent\hrule % Aqui ya pones tu abstract/resumen
+\vspace{0.5em}
 Este documento, tanto su formato de salida como su código fuente, es un tutorial de como utilizar \LaTeX para escribir un reporte de laboratorio. El texto aquí mostrado delineara el proceso de investigación, diseño, y experimentación que a mi como autor me ha funcionado mientras expone un pequeño tutorial de la instalación simplificada para programar \LaTeX en una maquina Windows. Al final de la lectura y análisis de este documento y sus archivos adjuntos, principalmente el archivo fuente adjunto (.tex), se espera que el lector tenga una comprensión básica tanto del método de escritura e investigación preferido por el autor, como una capacidad de programar y utilizar las librerías principales de \LaTeX para escribir un documento propio, o en su defecto utilizar esta plantilla a su máximo potencial.\\
-
-\hspace*{-40pt}
-
-%   El comando rule hace una linea horizontal usando los valores entre llaves
-\rule{17cm}{0.4pt}
+%   El comando hrule hace una linea horizontal usando los valores entre llaves
+\noindent\hrule
 
 \end{abstract}
 
@@ -160,11 +158,11 @@ Dicho esto, se comienza con la introducción, siendo aquí donde se mencionan lo
 
 \subsection{Instalación de \LaTeX}
 %   Las citas se hacen con el comando cite y se colocan justo donde quieres que aparezca la cita, en VSC usualmente la funcion de autocompletado te ayuda a encontrar las referencias en el archivo .bib
-Tex es un lenguaje de programación diseñado para diseño y tipografia de documentos, y de manera similar a GIMP o GNU es software gratuito, lo que llevo a la creación de un lenguaje mas fácil de leer y escribir: LaTeX \cite{CTAN}.\\ 
+Tex es un lenguaje de programación diseñado para diseño y tipografia de documentos, y de manera similar a GIMP o GNU es software gratuito, lo que llevo a la creación de un lenguaje mas fácil de leer y escribir: LaTeX \cite{CTAN2011}.\\ 
 %   El comando href es para hipervinculos, el texto entre llaves es la URL y el texto entre corchetes es el texto que se muestra
 Si es preferente seguir las mismas instrucciones que el autor para la instalación es posible encontralaas en esta \href{https://github.com/James-Yu/latex-workshop/wiki/Install}{\underbar{pagina de github}}. \\
 
-En todo caso el primer paso seria instalar VisualStudioCode (ahora abreviado a VSC) y una distribución de TeX, siendo la mas recomendada TeX Live. Para este paso es aconsejable tener una buena conexión puesto que la instalación completa cuenta con 4000+ paquetes individuales y puede tomar de 3 a 4 horas \cite{Lats}.
+En todo caso el primer paso seria instalar VisualStudioCode (ahora abreviado a VSC) y una distribución de TeX, siendo la mas recomendada TeX Live. Para este paso es aconsejable tener una buena conexión puesto que la instalación completa cuenta con 4000+ paquetes individuales y puede tomar de 3 a 4 horas.
 
 \subsection{Uso en \LaTeX}
 Ya instalado todo deberia ser posible compilar el archivo fuente .tex y obtener un documento similar al adjunto. \LaTeX \textit{workshop} es una extensión muy completa pero algo inestable, especialmente al trabajar con bibliografias y referencias cruzadas, entonces no es de sorprenderse si tu \textit{IDE} se enoja y avienta errores varios al compilar. Lo importante es ver que, aunque haya varias advertencias y errores, si al final el documento se genera tal y como lo quieres, es funcional.\\
@@ -174,6 +172,8 @@ Ya instalado todo deberia ser posible compilar el archivo fuente .tex y obtener 
     \caption{Visual Studio Code con LaTeX Workshop, notese los errores en la consola.} % El comando caption es para añadir una leyenda a la imagen
     \label{fig:vscode} % El comando label es para definir una etiqueta para referencias cruzadas en el texto fuera de la figura
 \end{figure}
+Como se observa en la Figura \ref{fig:vscode}, los errores no impiden la compilación.\\
+
 Al usar LaTeX para los reportes de la carrera, inevitablemente vas a tener que utilizar múltiples tipos de datos y tipografías para ejemplificar lo que estas intentando mostrar.\\
 
 % Para ecuaciones y expresiones matemáticas, el paquete AMSMath es el mas completo y recomendable. El ambiente equation es para ecuaciones numeradas y centradas en la columna, mientras que align es para ecuaciones alineadas por un símbolo en particular (&), usualmente el signo igual.\\
@@ -253,7 +253,11 @@ La conclusión como tal se divide en dos secciones importantes, la interpretaci�
 \subsection{Discusión}
 Espero que para este punto el lector tenga claro los principios simplificados de investigación, y como plasmarlos en un documento usando \LaTeX. Lo único que quedaría seria recomendar mas investigación sobre los esquemas de Draw.io, las alineaciones del paquete AMSMath, y el uso de BibTex para generar bibliografías por que yo como autor apenas puedo hacerlo funcionar. Mucha suerte en sus experimentos.
 
-\nocite{*} % El comando nocite{*} es para que se muestren todas las referencias del archivo .bib aunque no hayan sido citadas en el texto
-\printbibliography % El comando printbibliography es para imprimir la bibliografia en el documento
 \end{multicols}
+
+% El comando nocite{*} es para que se muestren todas las referencias del archivo .bib aunque no hayan sido citadas en el texto
+% Comentalo si no quieres mostrar todas las fuentes utilizadas, solo las citadas
+\nocite{*} 
+\printbibliography % El comando printbibliography es para imprimir la bibliografia en el documento
+
 \end{document}
